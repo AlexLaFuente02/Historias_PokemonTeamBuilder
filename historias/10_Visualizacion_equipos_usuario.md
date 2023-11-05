@@ -25,7 +25,7 @@ Funcionamiento esperado:
 2. La pantalla muestra todos los equipos Pokémon que el usuario ha creado 🌟 o le permite crear uno si es su primera vez.
 3. El usuario puede seleccionar cualquier equipo para verlo en detalle o editar su composición ✏️.
 
-![Alt text](*imagen_ver_equipos.png)
+![Pantalla tus equipos pokemón](../imagenes/tus_equipos_pokemon.png)
 
 ### Pantalla de Detalle de Equipo 🧐
 
