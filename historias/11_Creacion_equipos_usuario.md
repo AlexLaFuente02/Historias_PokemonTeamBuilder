@@ -11,7 +11,7 @@
 
 ## Especificación de requerimientos 📐
 
-1. Los usuarios deben poder crear un nuevo equipo, asignándole un nombre único 🏷️.
+1. Los usuarios deben poder crear un nuevo equipo.
 2. Cada equipo puede estar compuesto por un máximo de 6 Pokémon, siguiendo las reglas estándar de la franquicia 🎮.
 3. Los usuarios deben poder seleccionar Pokémon de una base de datos integrada, como PokeAPI, para añadirlos a sus equipos 🌐.
 4. La interfaz para la creación de equipos debe ser intuitiva y guiar al usuario a través del proceso paso a paso 🖌️.
@@ -23,9 +23,8 @@
 Funcionamiento esperado:
 
 1. El usuario selecciona la opción "Crear Nuevo Equipo" en la interfaz principal 🆕.
-2. Se presenta una pantalla con opciones para nombrar el equipo y añadir Pokémon 📋.
-3. El usuario puede buscar y seleccionar Pokémon para añadir a su equipo 📝.
-4. Una vez completado, el usuario puede guardar el equipo en su perfil 📥.
+2. El usuario puede buscar y seleccionar Pokémon para añadir a su equipo 📝.
+3. Una vez completado, el usuario puede guardar el equipo en su perfil 📥.
 
 ![Alt text](../imagenes/crear.png)
 
@@ -35,7 +34,7 @@ Funcionamiento esperado:
 
 - **Dado**: Que el usuario ha iniciado sesión en la aplicación 🌐.
 - **Cuando**: Elige la opción de "Crear Nuevo Equipo" y completa el proceso de selección y personalización de Pokémon 🖱️.
-- **Entonces**: El sistema debe guardar el nuevo equipo en el perfil del usuario con el nombre proporcionado 📝.
+- **Entonces**: El sistema debe guardar el nuevo equipo en el perfil del usuario 📝.
 
 ## Diseño 🎨
 
@@ -53,7 +52,7 @@ Authorization: Bearer JWT
 **Body:**
 ```json
 {
-  "teamName": "Equipo Legendaria",
+  "teamName": "Equipo 1",
   "pokemons": [
     {
       "pokemonId": "150",
@@ -69,7 +68,7 @@ Authorization: Bearer JWT
 **Response: Exitoso statusCode: 201**
 ```json
 {
-  "teamId": "newTeam123",
+  "teamId": "newTeam1",
   "message": "Team created successfully."
 }
 ```
