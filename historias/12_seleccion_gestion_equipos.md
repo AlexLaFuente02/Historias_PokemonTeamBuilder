@@ -28,7 +28,7 @@ Funcionamiento esperado:
 3. Al seleccionar un equipo, el usuario puede añadir o quitar Pokémon, así como ajustar su orden y configuración 🎚️.
 4. Los cambios se pueden guardar o descartar antes de salir de la pantalla de gestión 🚪.
 
-![Alt text](url-de-la-imagen-de-gestion-de-equipos.png)
+![Alt text](../imagenes/seleccion.png)
 
 ## Criterios de aceptación ✔️
 

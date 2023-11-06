@@ -27,7 +27,7 @@ Funcionamiento esperado:
 3. El usuario puede buscar y seleccionar Pokémon para añadir a su equipo 📝.
 4. Una vez completado, el usuario puede guardar el equipo en su perfil 📥.
 
-![Alt text](url-de-la-imagen-de-creacion-de-equipo.png)
+![Alt text](../imagenes/crear.png)
 
 ## Criterios de aceptación ✅
 
