@@ -28,8 +28,6 @@ Funcionamiento esperado:
 
 ![Pantalla tus equipos pokemón](../imagenes/tus_equipos_pokemon.png)
 
-### Pantalla de Detalle de Equipo 🧐
-
 ## Criterios de aceptación 🎯
 
 ### Visualización de equipos existentes 📊
