@@ -29,8 +29,6 @@ Funcionamiento esperado:
 
 ## Criterios de aceptación ✔️
 
-Gherkin
-
 ### Actualización de datos de Pokémon
 
 - **Dado**: Que la aplicación necesita información actualizada de un Pokémon específico 🆕.

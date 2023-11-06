@@ -10,7 +10,7 @@ Proporcionar a los jugadores de Pokémon una herramienta intuitiva y completa �
 30. Selección y gestión de Pokémon en equipos 📋.
 40. Integración con PokeAPI para datos actualizados de Pokémon 🔄.
 50. Visualización detallada de información de Pokémon 🔍.
-60. Edición de equipos Pokémon existentes ✏️.
+60. Modificación de equipos Pokémon existentes ✏️.
 
 ## Whish List 🌠
 1. Implementación de un sistema de recomendaciones basado en la efectividad de los tipos de Pokémon contra oponentes comunes 🤖.

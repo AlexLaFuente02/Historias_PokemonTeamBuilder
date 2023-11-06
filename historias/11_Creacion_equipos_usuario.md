@@ -31,8 +31,6 @@ Funcionamiento esperado:
 
 ## Criterios de aceptación ✅
 
-Gherkin
-
 ### Creación de un nuevo equipo Pokémon
 
 - **Dado**: Que el usuario ha iniciado sesión en la aplicación 🌐.

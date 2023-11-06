@@ -32,8 +32,6 @@ Funcionamiento esperado:
 
 ## Criterios de aceptación ✔️
 
-Gherkin
-
 ### Gestión de Pokémon en un equipo
 
 - **Dado**: Que el usuario ha seleccionado un equipo para gestionar 📝.

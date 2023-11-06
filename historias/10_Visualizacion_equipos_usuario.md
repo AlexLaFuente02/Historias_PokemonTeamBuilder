@@ -6,7 +6,8 @@
 
 ## Pendientes de definición 🤔
 
-1. *_pensando_*
+1. ¿Se debería mostrar un ejemplo de equipo Pokemón si el usuario no tiene equipos?
+   R. Se verá la integración de esta opción de acuerdo a la opinión de los primeros usuarios después de desplegar el proyecto.
 
 ## Especificación de requerimientos ✅
 

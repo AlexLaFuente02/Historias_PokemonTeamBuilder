@@ -26,11 +26,9 @@ Funcionamiento esperado:
 2. La pantalla muestra la composición actual del equipo y permite realizar cambios en ella 🔄.
 3. El usuario puede añadir o quitar Pokémon, cambiar configuraciones y guardar los cambios realizados 📥.
 
-![Alt text](url-de-la-imagen-de-edicion-de-equipo.png)
+![Modificar equipos Pokémon](../imagenes/modificar_equipo.png)
 
 ## Criterios de aceptación ✔️
-
-Gherkin
 
 ### Edición de un equipo Pokémon existente
 

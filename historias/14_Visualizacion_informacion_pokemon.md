@@ -30,8 +30,6 @@ Funcionamiento esperado:
 
 ## Criterios de aceptación ✔️
 
-Gherkin
-
 ### Visualización de información detallada de Pokémon
 
 - **Dado**: Que el usuario ha seleccionado un Pokémon para ver más detalles 🕵️‍♂️.
