@@ -85,5 +85,3 @@ Authorization: Bearer JWT
   "message": "Error updating team. Please check the provided data."
 }
 ```
-
-Recuerda reemplazar `BASE_URL` con la URL base de tu API, `{userId}` con el identificador del usuario, y `{teamId}` con el identificador del equipo. Las URLs de las imágenes y los datos de los Pokémon deben ser actualizados con la información correspondiente de tu base de datos o de la integración con PokeAPI.
