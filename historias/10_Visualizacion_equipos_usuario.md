@@ -80,3 +80,31 @@ Authorization: Bearer JWT
   "message": "No teams found for this user."
 }
 ```
+
+## Descripción de las Tablas:
+
+![Captura tablas](../imagenes/bd_tus_equipos_pokemon.png)
+
+
+**Tabla 'team'**
+- Esta tabla almacena los equipos de Pokémon. Cada equipo tiene un `id` único, un `team_name` que identifica el nombre del equipo, y una columna `statistics` para almacenar posibles estadísticas del equipo. La columna `user_user_id` es una llave foránea que vincula cada equipo a un usuario específico.
+
+**Tabla 'team_pokemon'**
+- Funciona como una tabla de asociación entre 'team' y 'pokemon', permitiendo que un equipo tenga múltiples Pokémon. La `team_pokemon_id` es una llave primaria única para cada entrada. `team_team_id` vincula cada Pokémon al equipo correspondiente y `pokemon_pokemon_id` vincula al Pokémon específico de la tabla 'pokemon'.
+
+**Tabla 'pokemon'**
+- Contiene los detalles de cada Pokémon. `pokemon_id` es la llave primaria única para cada Pokémon, `pokemon_name` almacena el nombre, y `type_element_type_element_id` puede usarse para asociar cada Pokémon con su tipo elemental.
+
+## Consulta SQL para Obtener Todos los Equipos de un Usuario:
+
+Para obtener todos los equipos de un usuario, realizaríamos una consulta SQL que se uniría a las tres tablas. Aquí está la consulta:
+
+```sql
+SELECT t.team_id, t.team_name, p.pokemon_id, p.pokemon_name
+FROM team t
+JOIN team_pokemon tp ON t.id = tp.team_team_id
+JOIN pokemon p ON tp.pokemon_pokemon_id = p.pokemon_id
+WHERE t.user_user_id = :userId;
+```
+
+En esta consulta, `:userId` sería el parámetro que representa el ID del usuario cuyos equipos queremos recuperar. Esta consulta selecciona el ID y el nombre del equipo de la tabla 'team', y para cada equipo, selecciona los Pokémon que contiene, incluyendo sus ID y nombres de la tabla 'pokemon'. La unión se realiza mediante los ID correspondientes en la tabla 'team_pokemon'.
