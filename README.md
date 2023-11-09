@@ -26,4 +26,4 @@ B. **Objetivos Específicos**
 
 ## Diseño de la base de datos 💾
 A continuación se presenta el diseño completo de la base de datos:
-![Diseno Base de Datos](../imagenes/bd_diseno_completo.png)
+![Diseno Base de Datos](./imagenes/bd_diseno_completo.png)
