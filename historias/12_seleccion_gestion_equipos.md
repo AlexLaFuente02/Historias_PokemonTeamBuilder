@@ -64,9 +64,6 @@ Authorization: Bearer JWT
 }
 ```
 
-Seguro, si necesitas documentar la selección de un equipo existente por parte de un usuario en formato Markdown, aquí está la descripción de cómo se podría hacer, incluyendo la consulta SQL para obtener la información del equipo seleccionado:
-
-```markdown
 ## Descripciones de las Tablas para la Selección de Equipos
 
 ### Tabla 'team'
