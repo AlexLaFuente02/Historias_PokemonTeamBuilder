@@ -79,3 +79,33 @@ Authorization: Bearer JWT
   "message": "Error creating team. Please check the provided data."
 }
 ```
+
+Claro, aquí está la información en formato Markdown (`.md`) para la documentación de la creación de un nuevo equipo Pokémon y los queries SQL correspondientes:
+
+```markdown
+## Descripciones de las Tablas para la Creación de Equipos
+
+### Tabla 'team'
+Esta tabla almacena los equipos de los usuarios. Al crear un nuevo equipo, se insertará una nueva fila con los siguientes campos:
+- `team_name`: Nombre del nuevo equipo Pokémon.
+- `user_user_id`: ID del usuario que está creando el equipo, actuando como una llave foránea.
+
+### Tabla 'team_pokemon'
+Después de crear un nuevo equipo, esta tabla se utilizará para asociar Pokémon individuales con el equipo correspondiente. Los campos implicados en la inserción son:
+- `team_team_id`: ID del equipo recién creado.
+- `pokemon_pokemon_id`: ID de cada Pokémon que será agregado al equipo.
+
+## Queries SQL para la Operación de Creación de Equipo
+
+### Paso 1: Insertar un Nuevo Equipo
+```sql
+INSERT INTO team (team_name, user_user_id) VALUES (:teamName, :userId);
+```
+Aquí, `:teamName` representa el nombre del nuevo equipo y `:userId` el ID del usuario.
+
+### Paso 2: Insertar Pokémon en el Equipo
+Para cada Pokémon que se quiera añadir al equipo, se ejecuta:
+```sql
+INSERT INTO team_pokemon (team_team_id, pokemon_pokemon_id) VALUES (:teamId, :pokemonId);
+```
+Donde `:teamId` es el ID del equipo y `:pokemonId` el ID del Pokémon a insertar.

@@ -1,59 +1,44 @@
-# Historia: Selección y Gestión de Pokémon en Equipos 🔄
+# Historia: Visualización de Equipo Pokémon 🏆
 
-- **Yo como**: Usuario Jugador 🎽
-- **Quiero**: Poder seleccionar y gestionar los Pokémon dentro de mis equipos 📊
-- **Para**: Optimizar mis estrategias y tener una alineación balanceada para cada batalla 🏆.
-
-## Pendientes de definición 🗒️
-
-1. ¿Cómo manejaremos los Pokémon duplicados en un equipo?
-   R. Se permitirán duplicados siempre y cuando cumplan con las reglas de torneos específicos.
+- **Yo como**: Jugador 🎮
+- **Quiero**: Ver los Pokémon que componen mi equipo actual 📊
+- **Para**: Evaluar mi alineación y hacer ajustes estratégicos para las batallas 🛠️.
 
 ## Especificación de requerimientos 📋
 
-1. Los usuarios deben poder añadir o quitar Pokémon de sus equipos existentes 🔄.
-2. Debe ser posible reordenar los Pokémon dentro de un equipo para planificar la estrategia de batalla 📈.
-3. Los usuarios deben poder ver un resumen de las estadísticas de combate y habilidades de cada Pokémon en el equipo 📊.
-4. La interfaz debe permitir la fácil selección de Pokémon de la integracion con pokeapi y su colocación en el equipo deseado 🗃️.
-5. Se debe proporcionar una opción para guardar cualquier cambio realizado en la configuración del equipo 💾.
-
-## Análisis 🕵️‍♀️
-
-### Pantalla de Gestión de Equipos Pokémon
-
-Funcionamiento esperado:
-
-1. El usuario accede a la sección "Gestionar Equipos" desde su perfil 🛠️.
-2. Se muestra una lista de equipos existentes con la opción de editarlos ✏️.
-3. Al seleccionar un equipo, el usuario puede añadir o quitar Pokémon, así como ajustar su orden y configuración 🎚️.
-4. Los cambios se pueden guardar o descartar antes de salir de la pantalla de gestión 🚪.
+1. Los jugadores deben poder visualizar su equipo Pokémon actual 🔄.
+2. La interfaz debe presentar una vista detallada del equipo a través de una integración con pokeapi 🌐.
+3. Los jugadores deberían tener la opción de refrescar la vista para 
+ver cualquier cambio reciente 🔄.
 
 ![Alt text](../imagenes/seleccion.png)
 
+
 ## Criterios de aceptación ✔️
 
-### Gestión de Pokémon en un equipo
+### Visualización de Equipo Pokémon
 
-- **Dado**: Que el usuario ha seleccionado un equipo para gestionar 📝.
-- **Cuando**: Añade, quita o reordena los Pokémon y selecciona "Guardar Cambios" 💾.
-- **Entonces**: El sistema debe actualizar el equipo con los cambios realizados ✅.
+- **Dado**: Que el jugador desea ver su equipo actual 📝.
+- **Cuando**: Accede a la sección "Ver Equipo" 💾.
+- **Entonces**: El sistema muestra los Pokémon que actualmente componen el equipo del jugador ✅.
 
 ## Diseño 🖌️
 
-### Pantalla de Gestión de Equipos Pokémon
+### Pantalla de Visualización de Equipo Pokémon
 
-Para actualizar la composición de un equipo Pokémon:
+Para consultar la composición actual de un equipo Pokémon:
 
 **Request:**
 ```http
-PUT BASE_URL/api/v1/users/{userId}/teams/{teamId}
+GET BASE_URL/api/v1/users/{userId}/teams/{teamId}
 Content-Type: Application/json
 Authorization: Bearer JWT
 ```
 
-**Body:**
+**Response: Exitoso statusCode: 200**
 ```json
 {
+  "teamId": "team123",
   "pokemons": [
     {
       "pokemonId": "025",
@@ -67,22 +52,38 @@ Authorization: Bearer JWT
         // ... otros stats
       }
     },
-    // ... ajustes para otros Pokémon
+    // ... detalles de otros Pokémon
   ]
-}
-```
-
-**Response: Exitoso statusCode: 200**
-```json
-{
-  "teamId": "team123",
-  "message": "Team updated successfully."
 }
 ```
 
 **Response: Error statusCode: 400**
 ```json
 {
-  "message": "Error updating team. Please check the provided data."
+  "message": "Error retrieving team. Please check the provided data."
 }
 ```
+
+Seguro, si necesitas documentar la selección de un equipo existente por parte de un usuario en formato Markdown, aquí está la descripción de cómo se podría hacer, incluyendo la consulta SQL para obtener la información del equipo seleccionado:
+
+```markdown
+## Descripciones de las Tablas para la Selección de Equipos
+
+### Tabla 'team'
+Esta tabla contiene los equipos creados por los usuarios. Para seleccionar un equipo, se consultará esta tabla para obtener los detalles del equipo correspondiente al ID del equipo.
+
+### Tabla 'team_pokemon'
+Una vez seleccionado un equipo, esta tabla se consulta para obtener todos los Pokémon que pertenecen al equipo. Se utiliza para mostrar el detalle completo del equipo.
+
+## Queries SQL para la Operación de Selección de Equipo
+
+### Consulta para Obtener los Detalles de un Equipo Específico
+Para obtener la información de un equipo específico junto con los Pokémon asociados, la consulta SQL sería algo como esto:
+```sql
+SELECT t.team_name, p.pokemon_id, p.pokemon_name
+FROM team t
+JOIN team_pokemon tp ON t.id = tp.team_team_id
+JOIN pokemon p ON tp.pokemon_pokemon_id = p.pokemon_id
+WHERE t.id = :teamId AND t.user_user_id = :userId;
+```
+En esta consulta, `:teamId` es el ID del equipo que el usuario ha seleccionado, y `:userId` es el ID del usuario, para asegurar que el usuario tenga permisos para ver el equipo.
