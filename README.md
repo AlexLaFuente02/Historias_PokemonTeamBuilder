@@ -24,6 +24,3 @@ B. **Objetivos Específicos**
 - Integrar con PokeAPI para proporcionar información actualizada y detallada de los Pokémon 📈.
 - Ofrecer funcionalidades para visualizar, modificar, agregar o eliminar equipos, y consultar información detallada de cada Pokémon 📚.
 
-## Diseño de la base de datos 💾
-A continuación se presenta el diseño completo de la base de datos:
-![Diseno Base de Datos](./imagenes/bd_diseno_completo.png)
