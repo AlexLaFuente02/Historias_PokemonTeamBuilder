@@ -80,9 +80,6 @@ Authorization: Bearer JWT
 }
 ```
 
-Claro, aquí está la información en formato Markdown (`.md`) para la documentación de la creación de un nuevo equipo Pokémon y los queries SQL correspondientes:
-
-```markdown
 ## Descripciones de las Tablas para la Creación de Equipos
 
 ### Tabla 'team'
